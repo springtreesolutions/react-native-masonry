@@ -94,7 +94,7 @@ export default class Masonry extends Component {
     unresolvedBricks
       .map(brick => resolveImage(brick))
       .map(resolveTask => resolveTask.fork(
-        (err) => console.warn('Image failed to load'),
+        (err) => console.warn('Image failed to load ', err),
         (resolvedBrick) => {
           this.setState(state => {
             const sortedData = _insertIntoColumn(resolvedBrick, state._sortedData, this.props.sorted);
